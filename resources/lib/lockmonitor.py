@@ -18,14 +18,7 @@ class LockMonitor(xbmc.Monitor):
     def onDPMSActivated(self):
         self.engage_master_lock()
 
-    def is_master(self):
-        req = {"jsonrpc": "2.0", "method": "XBMC.GetInfoBooleans", "params": {"booleans": ["System.IsMaster"]}, "id": 1}
-        req_data = json.dumps(req)
-        res_data = xbmc.executeJSONRPC(req_data)
-        res = json.loads(res_data)
-        return res["result"]["System.IsMaster"]
-
     def engage_master_lock(self):
-        if self.is_master():
+        if xbmc.getCondVisibility("System.IsMaster"):
             xbmc.log("[MasterLock] Master Lock was disengaged. Engaging.")
             xbmc.executebuiltin("Mastermode")
