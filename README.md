@@ -1,2 +1,2 @@
-# screensaver.dim.lock
-Basic dimming screensaver that also locks the master lock in Kodi
+# Master Lock Service
+This basic Kodi services enables the Master Lock whenever the screensaver kicks in.
