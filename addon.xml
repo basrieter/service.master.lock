@@ -22,6 +22,6 @@
         <assets>
             <icon>resources/media/icon.png</icon>
         </assets>
-        <news>- Initial version of the Master Lock Service</news>
+        <news>* Added: Option to navigate to the Home screen after locking.</news>
     </extension>
 </addon>
